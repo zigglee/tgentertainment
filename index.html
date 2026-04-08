@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'PingFang SC'}
+    span.s1 {font: 12.0px 'Lucida Grande'}
+    span.s2 {font: 12.0px 'PingFang SC'}
+    span.s3 {font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;TG Entertainment | China Market Entry&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-dark: #050505;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-card: #141414;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #f3f4f6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #9ca3af;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--accent: #00e5ff; /* Electric Cyan for music/tech vibe */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--accent-glow: rgba(0, 229, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', -apple-system, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Language Toggle Classes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.zh { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.en { display: block; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Navigation */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem 5%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(5, 5, 5, 0.9);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(10px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.logo {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lang-switch button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lang-switch button:hover, .lang-switch button.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 5%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8rem 0 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-title span {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Hero Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle at center, var(--bg-card) 0%, var(--bg-dark) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -1px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Grid Layouts */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Cards */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0,0,0,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Pricing Specifics */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card .price {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-grow: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card ul li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card ul li::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '<span class="s1">→</span>';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.premium-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 20px var(--accent-glow);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.2rem 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Monetization List */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.services-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.services-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.services-list li strong {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.grid-2 { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.hero h1 { font-size: 2.5rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>section { padding: 6rem 0 3rem; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="logo"&gt;TG ENT.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="lang-switch"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="btn-en" class="active" onclick="switchLang('en')"&gt;EN&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="btn-zh" onclick="switchLang('zh')"&gt;<span class="s2">中文</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Unlocking the World's Fastest-Growing &lt;span&gt;Music Market.&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;About Us:&lt;/strong&gt; A full-service China market entry and digital marketing agency driven by professional musicians and industry "gatekeepers."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s2">解鎖全球增長最快的</span>&lt;span&gt;<span class="s2">音樂市場。</span>&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;</span>關於我們：<span class="s3">&lt;/strong&gt; </span>由職業音樂人與資深行業專家驅動的中國市場全案代理機構，為國際藝人提供無縫的數字營銷策略。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="container" style="padding-top: 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title en"&gt;Why Partner &lt;span&gt;With Us?&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title zh"&gt;<span class="s2">為什麼與</span>&lt;span&gt;<span class="s2">我們合作？</span>&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;Industry-Defining Authority&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="zh"&gt;<span class="s2">深耕行業的決策影響力</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="en"&gt;Unlike standard PR firms, our core team consists of active "Decision Makers." We serve as final-round jurors for China’s most prestigious honors, including the CMA, Chinese Music Media Awards, and NetEase Cloud Music Indie Awards. We don't just follow industry trends; we help set the rules.&lt;/p&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                </span>&lt;p class="zh"&gt;</span>我們的核心團隊由權威獎項（如<span class="s3">CMA</span>唱工委音樂獎、華語音樂傳媒大獎）的終審評委及《樂隊的夏天》音樂顧問組成。我們不僅是執行者，更是規則的參與者。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;The "Hands-Off" Advantage&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="zh"&gt;<span class="s2">全自動化的託管體驗</span> (Hands-Off)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="en"&gt;We provide a seamless, end-to-end solution. Your team provides the raw content, and we handle the cultural translation, platform optimization, and fan engagement with zero added lift for your internal staff.&lt;/p&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                </span>&lt;p class="zh"&gt;</span>為藝人團隊提供一站式解決方案。從內容轉譯到粉絲互動，藝人團隊無需額外投入精力，即可解鎖中國音樂市場的巨大潛力。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;Musician-to-Musician Insight&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="zh"&gt;<span class="s2">懂音樂，更懂音樂人</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="en"&gt;With deep experience in professional performance and production, we understand the DNA of a musical work. We translate an artist's aesthetic vision into a localized brand that resonates with the Chinese subconscious.&lt;/p&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                </span>&lt;p class="zh"&gt;</span>擁有深厚的職業表演與製作經驗，我們深知藝術創作與商業表達的平衡點，能精準捕捉音樂內核並轉化為社交媒體的傳播熱點。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;Strategic Market Auditing&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="zh"&gt;<span class="s2">戰略性的市場審計</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="en"&gt;We don't guess; we analyze. Using proprietary insights from top-tier labels, we audit existing traction to build a data-backed roadmap for growth.&lt;/p&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                </span>&lt;p class="zh"&gt;</span>我們不靠猜測，只依賴數據。基於行業大數據的受眾分析，深度剖析現有數據，為藝人量身定制最精準的市場切入點與增長藍圖。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="container" style="background: var(--bg-card); padding: 4rem 5%; border-radius: 12px; margin-bottom: 4rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title en"&gt;Services &amp; &lt;span&gt;Quotation&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title zh"&gt;<span class="s2">服務內容與</span>&lt;span&gt;<span class="s2">報價</span>&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="en" style="margin-bottom: 2rem;"&gt;1. Monthly Social Media Retainer (Hands-Off Management)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="zh" style="margin-bottom: 2rem;"&gt;1. <span class="s2">社交媒體月度運營方案</span>&lt;/h3&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid-3" style="margin-bottom: 4rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card pricing-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;Lite&lt;/h3&gt;&lt;h3 class="zh"&gt;<span class="s2">基礎運營</span> (Lite)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;$700 &lt;span&gt;/ mo&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-muted en"&gt;3 Platforms • 2 Posts/Wk&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-muted zh"&gt;<span class="s2">覆蓋</span> 3 <span class="s2">個平台</span> • <span class="s2">每週</span> 2 <span class="s2">篇</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Localization (caption translation)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Basic comment management&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Monthly performance reports&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">海外內容專業本地化翻譯</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">基礎評論維護與引導</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">避免文化誤用及音樂專業錯誤</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card pricing-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;Professional&lt;/h3&gt;&lt;h3 class="zh"&gt;<span class="s2">行業增長方案</span> (Professional)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;$1,000 &lt;span&gt;/ mo&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-muted en"&gt;4 Platforms • 3 Posts/Wk&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-muted zh"&gt;<span class="s2">覆蓋</span> 4 <span class="s2">個平台</span> • <span class="s2">每週</span> 3 <span class="s2">篇</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;Critic-level copywriting&lt;/strong&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Short-form video subtitling&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;KOC community engagement&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Bi-weekly growth metrics&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;<span class="s2">資深樂評人撰稿</span>&lt;/strong&gt; (<span class="s2">稿費另計</span>)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">短視頻腳本策劃</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;KOC <span class="s2">社群互動</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">樂評人視角拉開與普通</span>PR<span class="s2">的差距</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card pricing-card premium-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="en"&gt;&lt;span class="badge"&gt;Most Popular&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="zh"&gt;&lt;span class="badge"&gt;<span class="s2">推薦選擇</span>&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="en"&gt;Premium&lt;/h3&gt;&lt;h3 class="zh"&gt;<span class="s2">旗艦戰略方案</span> (Premium)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;$1,500 &lt;span&gt;/ mo&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-muted en"&gt;Full Ecosystem • 4 Posts/Wk&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-muted zh"&gt;<span class="s2">全平台覆蓋</span> • <span class="s2">每週</span> 4 <span class="s2">篇</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Annual Artist Positioning Report&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;VIP media/industry pitching&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Campaign ideation&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Monthly strategy calls&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">年度藝人定位與戰略報告</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">深度行業採訪與公關對接</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">中國市場全盤策略諮詢服務</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;<span class="s2">音樂顧問級別的戰略指導</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="en" style="margin-bottom: 2rem;"&gt;2. Specialized &amp; Monetization Services&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="zh" style="margin-bottom: 2rem;"&gt;2. <span class="s2">專項策劃與商業變現服務</span>&lt;/h3&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="services-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Market Audit &amp; Positioning Package&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Existing traction analysis, target audience profiling, and a 12-month market entry roadmap.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;<span class="s2">藝人</span>/<span class="s2">品牌全案定位包</span>&lt;/strong&gt;</p>
+<p class="p3"><span class="s3"><span class="Apple-converted-space">                    </span>&lt;p&gt;</span>含受眾畫像、市場對標、全年傳播視覺基調建議及市場進入路線圖。<span class="s3">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;$2,500 / One-time&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Social Commerce Activation (Merchandise)&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Online store hosting, merchandising strategy, customer service, and POS management.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;<span class="s2">社交電商與周邊變現</span>&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;<span class="s2">線上店鋪託管、周邊設計策略建議、庫存管理、客服與結算。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;$500 Setup + 30% of Net Sales&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Music PR &amp; Editorial Feature&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;In-depth features authored by professional music critics for top-tier Chinese music publications.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;<span class="s2">音樂公關稿</span> / <span class="s2">深度訪談策劃</span>&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;<span class="s2">由專業樂評人主筆，適配主流音樂媒體及專欄的深度內容。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;$600 / Article&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;Creative Visual Services&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Basic Visuals (Covers/Posters) from $200. Full Campaign Visual Identity from $1,500.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;<span class="s2">平面視覺製作</span>&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;<span class="s2">基礎海報（單曲封面</span>/<span class="s2">預熱）</span>$200/<span class="s2">張。高階創意視覺（全套</span>EP/<span class="s2">宣發系統）</span>$1,500<span class="s2">起。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;In-Market Solicitation &amp; Partnership&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Commission on total contract value for brand deals, tour bookings, and crossover collaborations.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="zh"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;<span class="s2">行業資源對接與商業化落地</span>&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;<span class="s2">涉及藝人聯名、跨界合作、品牌贊助與巡演統籌的佣金。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;10%–15% Commission&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function switchLang(lang) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update content visibility</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const els = document.querySelectorAll('.zh, .en');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>els.forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(el.classList.contains(lang)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Re-hide inline elements properly if needed (like spans inside h1)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('span.zh, span.en').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(el.classList.contains(lang)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.display = 'inline';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update button active states</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('btn-en').classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('btn-zh').classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(`btn-${lang}`).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize default language</p>
+<p class="p1"><span class="Apple-converted-space">        </span>switchLang('en');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
