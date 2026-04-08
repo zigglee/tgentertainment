@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Entertainment | China Market Entry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --bg-card: #141414;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #00e5ff; /* Electric Cyan for music/tech vibe */
+            --accent-glow: rgba(0, 229, 255, 0.2);
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Language Toggle Classes */
+        .zh { display: none; }
+        .en { display: block; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-main);
+        }
+
+        .lang-switch button {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .lang-switch button:hover, .lang-switch button.active {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 8rem 0 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: radial-gradient(circle at center, var(--bg-card) 0%, var(--bg-dark) 100%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* Pricing Specifics */
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--text-main);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .pricing-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .premium-card {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .badge {
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 0.2rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Monetization List */
+        .services-list {
+            list-style: none;
+        }
+        .services-list li {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .services-list li strong {
+            color: var(--accent);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 6rem 0 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TG ENT.</div>
+        <div class="lang-switch">
+            <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+            <button id="btn-zh" onclick="switchLang('zh')">中文</button>
+        </div>
+    </nav>
+
+    <section class="hero container">
+        <div class="en">
+            <h1>Unlocking the World's Fastest-Growing <span>Music Market.</span></h1>
+            <p><strong>About Us:</strong> A full-service China market entry and digital marketing agency driven by professional musicians and industry "gatekeepers."</p>
+        </div>
+        <div class="zh">
+            <h1>解鎖全球增長最快的<span>音樂市場。</span></h1>
+            <p><strong>關於我們：</strong> 由職業音樂人與資深行業專家驅動的中國市場全案代理機構，為國際藝人提供無縫的數字營銷策略。</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding-top: 0;">
+        <h2 class="section-title en">Why Partner <span>With Us?</span></h2>
+        <h2 class="section-title zh">為什麼與<span>我們合作？</span></h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3 class="en">Industry-Defining Authority</h3>
+                <h3 class="zh">深耕行業的決策影響力</h3>
+                <p class="en">Unlike standard PR firms, our core team consists of active "Decision Makers." We serve as final-round jurors for China’s most prestigious honors, including the CMA, Chinese Music Media Awards, and NetEase Cloud Music Indie Awards. We don't just follow industry trends; we help set the rules.</p>
+                <p class="zh">我們的核心團隊由權威獎項（如CMA唱工委音樂獎、華語音樂傳媒大獎）的終審評委及《樂隊的夏天》音樂顧問組成。我們不僅是執行者，更是規則的參與者。</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="en">The "Hands-Off" Advantage</h3>
+                <h3 class="zh">全自動化的託管體驗 (Hands-Off)</h3>
+                <p class="en">We provide a seamless, end-to-end solution. Your team provides the raw content, and we handle the cultural translation, platform optimization, and fan engagement with zero added lift for your internal staff.</p>
+                <p class="zh">為藝人團隊提供一站式解決方案。從內容轉譯到粉絲互動，藝人團隊無需額外投入精力，即可解鎖中國音樂市場的巨大潛力。</p>
+            </div>
+
+            <div class="card">
+                <h3 class="en">Musician-to-Musician Insight</h3>
+                <h3 class="zh">懂音樂，更懂音樂人</h3>
+                <p class="en">With deep experience in professional performance and production, we understand the DNA of a musical work. We translate an artist's aesthetic vision into a localized brand that resonates with the Chinese subconscious.</p>
+                <p class="zh">擁有深厚的職業表演與製作經驗，我們深知藝術創作與商業表達的平衡點，能精準捕捉音樂內核並轉化為社交媒體的傳播熱點。</p>
+            </div>
+
+            <div class="card">
+                <h3 class="en">Strategic Market Auditing</h3>
+                <h3 class="zh">戰略性的市場審計</h3>
+                <p class="en">We don't guess; we analyze. Using proprietary insights from top-tier labels, we audit existing traction to build a data-backed roadmap for growth.</p>
+                <p class="zh">我們不靠猜測，只依賴數據。基於行業大數據的受眾分析，深度剖析現有數據，為藝人量身定制最精準的市場切入點與增長藍圖。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="background: var(--bg-card); padding: 4rem 5%; border-radius: 12px; margin-bottom: 4rem;">
+        <h2 class="section-title en">Services & <span>Quotation</span></h2>
+        <h2 class="section-title zh">服務內容與<span>報價</span></h2>
+
+        <h3 class="en" style="margin-bottom: 2rem;">1. Monthly Social Media Retainer (Hands-Off Management)</h3>
+        <h3 class="zh" style="margin-bottom: 2rem;">1. 社交媒體月度運營方案</h3>
+
+        <div class="grid-3" style="margin-bottom: 4rem;">
+            <div class="card pricing-card">
+                <h3 class="en">Lite</h3><h3 class="zh">基礎運營 (Lite)</h3>
+                <div class="price">$700 <span>/ mo</span></div>
+                <p class="text-muted en">3 Platforms • 2 Posts/Wk</p>
+                <p class="text-muted zh">覆蓋 3 個平台 • 每週 2 篇</p>
+                <ul class="en">
+                    <li>Localization (caption translation)</li>
+                    <li>Basic comment management</li>
+                    <li>Monthly performance reports</li>
+                </ul>
+                <ul class="zh">
+                    <li>海外內容專業本地化翻譯</li>
+                    <li>基礎評論維護與引導</li>
+                    <li>避免文化誤用及音樂專業錯誤</li>
+                </ul>
+            </div>
+
+            <div class="card pricing-card">
+                <h3 class="en">Professional</h3><h3 class="zh">行業增長方案 (Professional)</h3>
+                <div class="price">$1,000 <span>/ mo</span></div>
+                <p class="text-muted en">4 Platforms • 3 Posts/Wk</p>
+                <p class="text-muted zh">覆蓋 4 個平台 • 每週 3 篇</p>
+                <ul class="en">
+                    <li><strong>Critic-level copywriting</strong></li>
+                    <li>Short-form video subtitling</li>
+                    <li>KOC community engagement</li>
+                    <li>Bi-weekly growth metrics</li>
+                </ul>
+                <ul class="zh">
+                    <li><strong>資深樂評人撰稿</strong> (稿費另計)</li>
+                    <li>短視頻腳本策劃</li>
+                    <li>KOC 社群互動</li>
+                    <li>樂評人視角拉開與普通PR的差距</li>
+                </ul>
+            </div>
+
+            <div class="card pricing-card premium-card">
+                <div class="en"><span class="badge">Most Popular</span></div>
+                <div class="zh"><span class="badge">推薦選擇</span></div>
+                <h3 class="en">Premium</h3><h3 class="zh">旗艦戰略方案 (Premium)</h3>
+                <div class="price">$1,500 <span>/ mo</span></div>
+                <p class="text-muted en">Full Ecosystem • 4 Posts/Wk</p>
+                <p class="text-muted zh">全平台覆蓋 • 每週 4 篇</p>
+                <ul class="en">
+                    <li>Annual Artist Positioning Report</li>
+                    <li>VIP media/industry pitching</li>
+                    <li>Campaign ideation</li>
+                    <li>Monthly strategy calls</li>
+                </ul>
+                <ul class="zh">
+                    <li>年度藝人定位與戰略報告</li>
+                    <li>深度行業採訪與公關對接</li>
+                    <li>中國市場全盤策略諮詢服務</li>
+                    <li>音樂顧問級別的戰略指導</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="en" style="margin-bottom: 2rem;">2. Specialized & Monetization Services</h3>
+        <h3 class="zh" style="margin-bottom: 2rem;">2. 專項策劃與商業變現服務</h3>
+
+        <ul class="services-list">
+            <li>
+                <div class="en">
+                    <strong>Market Audit & Positioning Package</strong>
+                    <p>Existing traction analysis, target audience profiling, and a 12-month market entry roadmap.</p>
+                </div>
+                <div class="zh">
+                    <strong>藝人/品牌全案定位包</strong>
+                    <p>含受眾畫像、市場對標、全年傳播視覺基調建議及市場進入路線圖。</p>
+                </div>
+                <div class="price">$2,500 / One-time</div>
+            </li>
+            <li>
+                <div class="en">
+                    <strong>Social Commerce Activation (Merchandise)</strong>
+                    <p>Online store hosting, merchandising strategy, customer service, and POS management.</p>
+                </div>
+                <div class="zh">
+                    <strong>社交電商與周邊變現</strong>
+                    <p>線上店鋪託管、周邊設計策略建議、庫存管理、客服與結算。</p>
+                </div>
+                <div class="price">$500 Setup + 30% of Net Sales</div>
+            </li>
+            <li>
+                <div class="en">
+                    <strong>Music PR & Editorial Feature</strong>
+                    <p>In-depth features authored by professional music critics for top-tier Chinese music publications.</p>
+                </div>
+                <div class="zh">
+                    <strong>音樂公關稿 / 深度訪談策劃</strong>
+                    <p>由專業樂評人主筆，適配主流音樂媒體及專欄的深度內容。</p>
+                </div>
+                <div class="price">$600 / Article</div>
+            </li>
+            <li>
+                <div class="en">
+                    <strong>Creative Visual Services</strong>
+                    <p>Basic Visuals (Covers/Posters) from $200. Full Campaign Visual Identity from $1,500.</p>
+                </div>
+                <div class="zh">
+                    <strong>平面視覺製作</strong>
+                    <p>基礎海報（單曲封面/預熱）$200/張。高階創意視覺（全套EP/宣發系統）$1,500起。</p>
+                </div>
+            </li>
+            <li>
+                <div class="en">
+                    <strong>In-Market Solicitation & Partnership</strong>
+                    <p>Commission on total contract value for brand deals, tour bookings, and crossover collaborations.</p>
+                </div>
+                <div class="zh">
+                    <strong>行業資源對接與商業化落地</strong>
+                    <p>涉及藝人聯名、跨界合作、品牌贊助與巡演統籌的佣金。</p>
+                </div>
+                <div class="price">10%–15% Commission</div>
+            </li>
+        </ul>
+    </section>
+
+    <script>
+        function switchLang(lang) {
+            // Update content visibility
+            const els = document.querySelectorAll('.zh, .en');
+            els.forEach(el => {
+                if(el.classList.contains(lang)) {
+                    el.style.display = 'block';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+
+            // Re-hide inline elements properly if needed (like spans inside h1)
+            document.querySelectorAll('span.zh, span.en').forEach(el => {
+                if(el.classList.contains(lang)) {
+                    el.style.display = 'inline';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+
+            // Update button active states
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-zh').classList.remove('active');
+            document.getElementById(`btn-${lang}`).classList.add('active');
+        }
+
+        // Initialize default language
+        switchLang('en');
+    </script>
+</body>
+</html>
