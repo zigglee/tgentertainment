@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TG Entertainment | China Market Entry</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
 
         :root {
-            --bg-color: #0d0d0d;
-            --surface-color: #1a1a1a;
+            --bg-color: #ffffff;
+            --surface-color: #f4f4f4;
             --primary-red: #e60000;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --border-color: #e0e0e0;
         }
 
         body {
@@ -20,7 +21,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .container {
@@ -33,12 +34,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
+            color: var(--text-main);
         }
 
         h2 {
             font-size: 2.5rem;
+            font-weight: 800;
             color: var(--primary-red);
-            border-bottom: 2px solid var(--surface-color);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 10px;
         }
 
@@ -49,74 +52,77 @@
         }
 
         a:hover {
-            color: #ff4d4d;
+            color: #cc0000;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--primary-red);
             color: white;
-            padding: 15px 30px;
-            font-weight: bold;
+            padding: 15px 35px;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
             border: none;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            border-radius: 4px;
         }
 
         .btn:hover {
-            background-color: #ff1a1a;
+            background-color: #cc0000;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(230, 0, 0, 0.2);
         }
 
-        /* 統一的圖片樣式 */
         .feature-image {
             width: 100%;
             height: auto;
             border-radius: 8px;
             object-fit: cover;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
         }
 
-        /* Hero Section */
-        /* [IMAGE_LOCATION_1: 首頁背景圖] */
+        /* Hero Section - Light & Clean */
         .hero {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('REPLACE_IMAGE_1_HERO_BG.jpg') no-repeat center center/cover;
-            background-color: #111;
+            /* 使用半透明的白色遮罩，确保文字在明亮的背景图上依然清晰可见 */
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('hero-bright-studio.jpg') no-repeat center center/cover;
+            background-color: #f9f9f9;
         }
 
         .hero h1 {
             font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 10px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-main);
         }
 
         .hero p {
             font-size: 1.5rem;
             color: var(--text-muted);
             margin-bottom: 40px;
+            font-weight: 300;
         }
 
-        /* Sections General */
         section {
             padding: 100px 0;
         }
 
-        .bg-darker {
-            background-color: #050505;
+        .bg-light-grey {
+            background-color: var(--surface-color);
         }
 
         .two-col-flex {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
             margin-top: 40px;
         }
 
@@ -125,56 +131,73 @@
         }
 
         .why-card {
-            background-color: var(--surface-color);
+            background-color: var(--bg-color);
             padding: 30px;
-            border-left: 4px solid var(--primary-red);
+            border-left: 4px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .why-card.highlight {
+            border-left-color: var(--primary-red);
         }
 
         .why-card h3 {
-            color: var(--text-main);
             font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0;
         }
 
         .three-col-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
             margin-top: 40px;
         }
 
         .pillar-card {
-            background-color: var(--surface-color);
+            background-color: var(--bg-color);
             padding: 40px 30px;
             text-align: left;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         .pillar-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(230, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
         }
 
         .roadmap-container {
             display: flex;
             justify-content: space-between;
-            margin-top: 40px;
+            margin-top: 50px;
             position: relative;
+            background-color: var(--bg-color);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
         .roadmap-step {
             flex: 1;
             text-align: center;
             padding: 20px;
-            position: relative;
-            z-index: 1;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .roadmap-step:last-child {
+            border-right: none;
         }
 
         .roadmap-step h1 {
             color: var(--primary-red);
-            font-size: 3rem;
-            margin: 0;
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            line-height: 1;
         }
 
         .plans-grid {
@@ -185,52 +208,56 @@
         }
 
         .plan-card {
-            background-color: var(--surface-color);
-            border: 1px solid #333;
-            padding: 40px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 50px 40px;
             text-align: left;
             transition: all 0.3s;
             position: relative;
-            overflow: hidden;
+            border-radius: 8px;
         }
 
         .plan-card:hover {
             border-color: var(--primary-red);
-            box-shadow: 0 0 20px rgba(230, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(230, 0, 0, 0.08);
             transform: translateY(-5px);
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            color: var(--primary-red);
+            font-weight: 800;
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
+            margin-top: 40px;
+            background-color: var(--bg-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th, td {
-            padding: 20px;
+            padding: 20px 25px;
             text-align: left;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
             background-color: var(--surface-color);
-            color: var(--primary-red);
+            color: var(--text-main);
+            font-weight: 600;
         }
 
-        footer {
-            background-color: var(--surface-color);
-            padding: 60px 0;
-            text-align: center;
-            border-top: 2px solid var(--primary-red);
-        }
-
-        /* 表單輸入框樣式 */
         .form-input {
             width: 100%; 
             padding: 15px; 
-            background-color: #0d0d0d; 
-            border: 1px solid #333; 
-            color: white; 
+            background-color: #ffffff; 
+            border: 1px solid #ccc; 
+            color: var(--text-main); 
             border-radius: 4px; 
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
@@ -242,9 +269,23 @@
             border-color: var(--primary-red);
         }
 
+        footer {
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .roadmap-container, .two-col-flex { flex-direction: column; }
+            .roadmap-container { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
+            .roadmap-step { border-right: none; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; }
+            .two-col-flex { flex-direction: column; }
         }
     </style>
 </head>
@@ -252,16 +293,17 @@
 
     <header class="hero">
         <div class="container">
+            <h4 style="color: var(--primary-red); letter-spacing: 2px;">TG Entertainment</h4>
             <h1>Unlocking the World's Fastest-Growing Music Market.</h1>
             <p>China Market Entry & Digital Management for International Artists.</p>
             <a href="#plans" class="btn">View Our Plans</a>
         </div>
     </header>
 
-    <section class="bg-darker">
+    <section class="bg-light-grey">
         <div class="container" style="text-align: center; max-width: 800px;">
-            <h2 style="border: none; justify-content: center;">The Audience is Waiting.</h2>
-            <p style="font-size: 1.2rem; color: var(--text-muted);">The Chinese music market offers unprecedented scale, yet Western artists routinely leave millions in lucrative revenue on the table. The barrier to entry isn't a lack of interest—it's a lack of access. The Chinese digital landscape is isolated, fragmented, and opaque to outsiders.</p>
+            <h2 style="border: none; display: inline-block;">The Audience is Waiting.</h2>
+            <p style="font-size: 1.2rem; color: var(--text-muted); margin-top: 20px;">The Chinese music market offers unprecedented scale, yet Western artists routinely leave millions in lucrative revenue on the table. The barrier to entry isn't a lack of interest—it's a lack of access. The Chinese digital landscape is isolated, fragmented, and opaque to outsiders.</p>
         </div>
     </section>
 
@@ -270,53 +312,53 @@
             <div class="two-col-flex">
                 <div>
                     <h2>Why Partner With Us? Our Competitive Edge</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 30px;">We are driven not by standard marketers, but by professional musicians and industry gatekeepers.</p>
+                    <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem;">We are driven not by standard marketers, but by professional musicians and industry gatekeepers.</p>
                     
-                    <img src="REPLACE_IMAGE_2_VIP_PASS.jpg" alt="Industry Authority Backstage Pass" class="feature-image">
+                    <img src="vip-pass-clean.jpg" alt="Industry Authority Backstage Pass" class="feature-image">
                 </div>
                 <div>
-                    <div class="why-card" style="margin-bottom: 20px; border-left-color: #fff;">
+                    <div class="why-card" style="margin-bottom: 20px;">
                         <h3>Industry-Defining Authority</h3>
-                        <p>Unlike standard PR firms, our core team consists of active "Decision Makers." We serve as final-round jurors for China’s most prestigious honors, including the CMA (Music Powerhouse Awards), Chinese Music Media Awards, and NetEase Cloud Music Indie Awards.</p>
+                        <p style="color: var(--text-muted);">Unlike standard PR firms, our core team consists of active "Decision Makers." We serve as final-round jurors for China’s most prestigious honors, including the CMA (Music Powerhouse Awards), Chinese Music Media Awards, and NetEase Cloud Music Indie Awards.</p>
                     </div>
-                    <div class="why-card" style="margin-bottom: 20px; border-left-color: var(--primary-red);">
+                    <div class="why-card highlight" style="margin-bottom: 20px;">
                         <h3>The "Hands-Off" Advantage</h3>
-                        <p>We provide a seamless, end-to-end solution for international artists. Our "Hands-off" philosophy means your team provides the raw content, and we handle the cultural translation, platform optimization, and fan engagement with zero added lift for your internal staff.</p>
+                        <p style="color: var(--text-muted);">We provide a seamless, end-to-end solution for international artists. Our "Hands-off" philosophy means your team provides the raw content, and we handle the cultural translation, platform optimization, and fan engagement with zero added lift for your internal staff.</p>
                     </div>
-                    <div class="why-card" style="margin-bottom: 20px; border-left-color: #fff;">
+                    <div class="why-card" style="margin-bottom: 20px;">
                         <h3>Musician-to-Musician Insight</h3>
-                        <p>With deep experience in professional performance and production, we understand the DNA of a musical work. We don't just "post content"—we translate an artist's aesthetic vision into a localized brand that resonates with the Chinese subconscious.</p>
+                        <p style="color: var(--text-muted);">With deep experience in professional performance and production, we understand the DNA of a musical work. We don't just "post content"—we translate an artist's aesthetic vision into a localized brand that resonates with the Chinese subconscious.</p>
                     </div>
-                    <div class="why-card" style="border-left-color: var(--primary-red);">
+                    <div class="why-card highlight">
                         <h3>Strategic Market Auditing</h3>
-                        <p>We don't guess; we analyze. Using proprietary insights from our work with shows like "The Big Band" and top-tier labels, we audit existing traction to build a data-backed roadmap for growth.</p>
+                        <p style="color: var(--text-muted);">We don't guess; we analyze. Using proprietary insights from our work with shows like "The Big Band" and top-tier labels, we audit existing traction to build a data-backed roadmap for growth.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-darker">
+    <section class="bg-light-grey">
         <div class="container">
-            <h2 style="text-align: center;">Cultural Transcreation, Not Just Translation.</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; color: var(--text-muted);">We don't just "post content.” We translate your artist's aesthetic vision into a localized brand that resonates deeply with the Chinese subconscious. Preserving the soul of the music, while making it natively relevant.</p>
+            <h2 style="text-align: center; border: none;">Cultural Transcreation, Not Just Translation.</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; color: var(--text-muted); font-size: 1.1rem;">We don't just "post content.” We translate your artist's aesthetic vision into a localized brand that resonates deeply with the Chinese subconscious. Preserving the soul of the music, while making it natively relevant.</p>
             
-            <img src="REPLACE_IMAGE_3_ECOSYSTEM.jpg" alt="Digital Ecosystem Map" class="feature-image" style="max-height: 400px; margin-bottom: 60px;">
+            <img src="ecosystem-infographic.jpg" alt="Digital Ecosystem Map" class="feature-image" style="max-height: 450px; margin-bottom: 80px;">
 
-            <h2>Mastering the Chinese Digital Ecosystem</h2>
-            <p>A highly fragmented market requires a unified, cross-platform strategy. We navigate the maze so you don't have to.</p>
+            <h2 style="border: none;">Mastering the Chinese Digital Ecosystem</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">A highly fragmented market requires a unified, cross-platform strategy. We navigate the maze so you don't have to.</p>
             <div class="three-col-grid">
                 <div class="pillar-card">
                     <h3 style="color: var(--primary-red);">DSP</h3>
-                    <p>(Digital Streaming Platforms)<br><br><strong>Platforms:</strong> NetEase Cloud Music, QQ Music</p>
+                    <p style="color: var(--text-muted);">(Digital Streaming Platforms)<br><br><strong style="color: var(--text-main);">Platforms:</strong> NetEase Cloud Music, QQ Music</p>
                 </div>
                 <div class="pillar-card">
                     <h3 style="color: var(--primary-red);">Social & Microblogging</h3>
-                    <p><br><strong>Platforms:</strong> Weibo, WeChat</p>
+                    <p style="color: var(--text-muted);"><br><br><strong style="color: var(--text-main);">Platforms:</strong> Weibo, WeChat</p>
                 </div>
                 <div class="pillar-card">
                     <h3 style="color: var(--primary-red);">Video & Trend Discovery</h3>
-                    <p><br><strong>Platforms:</strong> Douyin (TikTok), Xiaohongshu (RED), Bilibili</p>
+                    <p style="color: var(--text-muted);"><br><br><strong style="color: var(--text-main);">Platforms:</strong> Douyin (TikTok), Xiaohongshu (RED), Bilibili</p>
                 </div>
             </div>
         </div>
@@ -327,142 +369,53 @@
             <h2>Our Core Pillars of Service</h2>
             <div class="three-col-grid">
                 <div class="pillar-card">
-                    <img src="REPLACE_IMAGE_4_SOCIAL.jpg" alt="Social Media Strategy" class="feature-image" style="height: 200px;">
+                    <img src="social-media-light.jpg" alt="Social Media Strategy" class="feature-image" style="height: 220px;">
                     <h3>Pillar I: Strategy & Full-Service Social</h3>
-                    <p><strong>Market Audit:</strong> Comprehensive Chinese consumer audit, competitor benchmarking, and bespoke brand development strategies.</p>
-                    <p><strong>Social Execution:</strong> Fully localized management across Weibo, Douyin, Xiaohongshu, Bilibili, and WeChat.</p>
+                    <p style="color: var(--text-muted);"><strong>Market Audit:</strong> Comprehensive Chinese consumer audit, competitor benchmarking, and bespoke brand development strategies.</p>
+                    <p style="color: var(--text-muted);"><strong>Social Execution:</strong> Fully localized management across Weibo, Douyin, Xiaohongshu, Bilibili, and WeChat.</p>
                 </div>
                 <div class="pillar-card">
-                    <img src="REPLACE_IMAGE_5_DSP.jpg" alt="DSP Streaming" class="feature-image" style="height: 200px;">
+                    <img src="dsp-streaming-light.jpg" alt="DSP Streaming" class="feature-image" style="height: 220px;">
                     <h3>Pillar II: DSP Growth & Editorial Authority</h3>
-                    <p><strong>Streaming Optimization:</strong> Profile optimization and active management on NetEase Cloud Music and QQ Music.</p>
-                    <p><strong>The VIP Edge:</strong> In-depth features authored by professional music critics for top-tier Chinese music publications.</p>
+                    <p style="color: var(--text-muted);"><strong>Streaming Optimization:</strong> Profile optimization and active management on NetEase Cloud Music and QQ Music.</p>
+                    <p style="color: var(--text-muted);"><strong>The VIP Edge:</strong> In-depth features authored by professional music critics for top-tier Chinese music publications.</p>
                 </div>
                 <div class="pillar-card">
-                    <img src="REPLACE_IMAGE_6_COMMERCE.jpg" alt="Merch and Commerce" class="feature-image" style="height: 200px;">
+                    <img src="merch-apparel-light.jpg" alt="Merch and Commerce" class="feature-image" style="height: 220px;">
                     <h3>Pillar III: Beyond the Screen — Commerce</h3>
-                    <p><strong>Social Commerce:</strong> Online store hosting, bespoke merch design/sourcing, and direct distribution.</p>
-                    <p><strong>In-Market Execution:</strong> China tour solicitation, local brand partnership outreach, and cross-over collaborations.</p>
+                    <p style="color: var(--text-muted);"><strong>Social Commerce:</strong> Online store hosting, bespoke merch design/sourcing, and direct distribution.</p>
+                    <p style="color: var(--text-muted);"><strong>In-Market Execution:</strong> China tour solicitation, local brand partnership outreach, and cross-over collaborations.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-darker">
+    <section class="bg-light-grey">
         <div class="container">
-            <h2>The TG Growth Roadmap</h2>
-            <p>We build a data-backed roadmap for sustainable growth based on our work with top-tier labels.</p>
+            <h2 style="border:none;">The TG Growth Roadmap</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">We build a data-backed roadmap for sustainable growth based on our work with top-tier labels.</p>
             <div class="roadmap-container">
-                <div class="roadmap-step"><h1>1</h1><h3>Audit & Strategy</h3><p>Profiling & brand positioning.</p></div>
-                <div class="roadmap-step"><h1>2</h1><h3>Social Ecosystem</h3><p>Transcreation & consistent presence.</p></div>
-                <div class="roadmap-step"><h1>3</h1><h3>DSP Pitching & PR</h3><p>Streaming growth & editorial authority.</p></div>
-                <div class="roadmap-step"><h1>4</h1><h3>Merch & Touring</h3><p>Monetization & in-market execution.</p></div>
+                <div class="roadmap-step"><h1>1</h1><h3 style="margin-bottom: 5px;">Audit & Strategy</h3><p style="color: var(--text-muted); font-size: 0.95rem;">Profiling & brand positioning.</p></div>
+                <div class="roadmap-step"><h1>2</h1><h3 style="margin-bottom: 5px;">Social Ecosystem</h3><p style="color: var(--text-muted); font-size: 0.95rem;">Transcreation & consistent presence.</p></div>
+                <div class="roadmap-step"><h1>3</h1><h3 style="margin-bottom: 5px;">DSP Pitching & PR</h3><p style="color: var(--text-muted); font-size: 0.95rem;">Streaming growth & editorial authority.</p></div>
+                <div class="roadmap-step"><h1>4</h1><h3 style="margin-bottom: 5px;">Merch & Touring</h3><p style="color: var(--text-muted); font-size: 0.95rem;">Monetization & in-market execution.</p></div>
             </div>
         </div>
     </section>
 
     <section id="plans">
         <div class="container">
-            <h2 style="text-align: center;">Hands-Off Social Media Retainers</h2>
+            <h2 style="text-align: center; border: none;">Hands-Off Social Media Retainers</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px;">Choose your entry strategy. Zero added lift for your internal staff.</p>
             
             <div class="plans-grid">
                 <div class="plan-card">
                     <h3>LITE</h3>
-                    <div class="plan-price">$700<span style="font-size: 1rem; color: #fff; font-weight: normal;"> /mo</span></div>
-                    <ul style="list-style: none; padding: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 10px;">✓ <strong>3 Platforms | 2 Posts / Wk</strong></li>
+                    <div class="plan-price">$700<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;"> /mo</span></div>
+                    <ul style="list-style: none; padding: 0; color: var(--text-muted); margin-bottom: 40px;">
+                        <li style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;"><strong>3 Platforms | 2 Posts / Wk</strong></li>
                         <li style="margin-bottom: 10px;">✓ Localization (caption translation)</li>
                         <li style="margin-bottom: 10px;">✓ Basic comment management</li>
                         <li style="margin-bottom: 10px;">✓ Monthly performance reports</li>
                     </ul>
-                    <a href="#contact" class="btn" style="width: 100%; text-align: center; box-sizing: border-box;">Contact to Activate</a>
-                </div>
-
-                <div class="plan-card" style="border-color: var(--primary-red);">
-                    <h3>PROFESSIONAL</h3>
-                    <div class="plan-price">$1,000<span style="font-size: 1rem; color: #fff; font-weight: normal;"> /mo</span></div>
-                    <ul style="list-style: none; padding: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 10px;">✓ <strong>4 Platforms | 3 Posts / Wk</strong></li>
-                        <li style="margin-bottom: 10px;">✓ Critic-level copywriting</li>
-                        <li style="margin-bottom: 10px;">✓ Short-form video subtitling</li>
-                        <li style="margin-bottom: 10px;">✓ KOC community engagement</li>
-                    </ul>
-                    <a href="#contact" class="btn" style="width: 100%; text-align: center; box-sizing: border-box;">Contact to Activate</a>
-                </div>
-
-                <div class="plan-card">
-                    <h3>PREMIUM</h3>
-                    <div class="plan-price">$1,500<span style="font-size: 1rem; color: #fff; font-weight: normal;"> /mo</span></div>
-                    <ul style="list-style: none; padding: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 10px;">✓ <strong>Full Ecosystem | 4 Posts / Wk</strong></li>
-                        <li style="margin-bottom: 10px;">✓ Annual Artist Positioning Report</li>
-                        <li style="margin-bottom: 10px;">✓ VIP media/industry pitching</li>
-                        <li style="margin-bottom: 10px;">✓ Campaign ideation</li>
-                    </ul>
-                    <a href="#contact" class="btn" style="width: 100%; text-align: center; box-sizing: border-box;">Contact to Activate</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-darker">
-        <div class="container">
-            <h2 style="text-align: center;">Ready to Dominate the Market?</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px;">Let's build your data-backed entry strategy. Reach out to us directly or fill out the form below.</p>
-            
-            <div class="two-col-flex" style="align-items: flex-start;">
-                
-                <div style="background-color: var(--surface-color); padding: 40px; border-radius: 8px; border-top: 4px solid var(--primary-red);">
-                    <h3 style="margin-top: 0;">Contact Information</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 30px;">Prefer direct communication? Send us an email or connect with our team on WeChat.</p>
-                    
-                    <p><strong>Email Us:</strong><br>
-                        <a href="mailto:YOUR_BUSINESS_EMAIL_HERE" style="font-size: 1.2rem; font-weight: bold; word-break: break-all;">YOUR_BUSINESS_EMAIL_HERE</a>
-                    </p>
-                    
-                    <div style="margin-top: 40px;">
-                        <p><strong>WeChat VIP Access:</strong></p>
-                        <img src="REPLACE_IMAGE_7_QR.jpg" alt="Scan for VIP WeChat Access" style="width: 150px; height: 150px; border-radius: 8px; border: 1px solid #333;">
-                    </div>
-                </div>
-
-                <div style="background-color: var(--surface-color); padding: 40px; border-radius: 8px; width: 100%; box-sizing: border-box;">
-                    <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-                        
-                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-                        
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                        <div>
-                            <label for="name" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Name / Company</label>
-                            <input type="text" name="name" id="name" class="form-input" placeholder="Your Name or Label" required>
-                        </div>
-                        <div>
-                            <label for="email" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Email Address</label>
-                            <input type="email" name="email" id="email" class="form-input" placeholder="you@company.com" required>
-                        </div>
-                        <div>
-                            <label for="message" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Project Details</label>
-                            <textarea name="message" id="message" rows="5" class="form-input" placeholder="Tell us about your artist and goals in China..." style="resize: vertical;" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
-                    </form>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <h3 style="margin-bottom: 10px;">TG Entertainment</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">
-                &copy; 2026 TG Entertainment. All rights reserved.<br>
-                Website: www.tgentertainment.placeholder
-            </p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center; box-sizing: border-box;">
