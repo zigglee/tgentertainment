@@ -513,8 +513,8 @@
                 </div>
 
                 <div style="padding: 40px; border: 1px solid var(--border-color); border-radius: 8px; flex: 1.2; box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
-                    <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-                        <input type="hidden" name="access_key" value="74c676f0-1482-4853-974f-d3c0b10b1fce">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                         <div style="display: flex; gap: 20px;">
@@ -531,6 +531,9 @@
                             <label for="message" style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; font-weight: 600;">Project Details</label>
                             <textarea name="message" id="message" rows="5" class="form-input" placeholder="Tell us about your artist and goals in China..." style="resize: vertical;" required></textarea>
                         </div>
+
+                        <div class="h-captcha" data-captcha="true"></div>
+
                         <button type="submit" class="btn" style="width: auto; align-self: flex-start; margin-top: 10px;">Send Message</button>
                     </form>
                 </div>
@@ -550,20 +553,30 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 將郵箱拆分成變量，防止爬蟲直接在源碼中抓取完整字符串
             var user = "yuan";
             var domain = "tg-ent.com";
             var fullEmail = user + "@" + domain;
             
-            // 找到所有 class 包含 'protect-email' 的標籤
             var emailLinks = document.querySelectorAll('.protect-email');
-            
-            // 動態將郵箱寫入網頁內容並生成 mailto 鏈接
             emailLinks.forEach(function(link) {
                 link.innerHTML = fullEmail;
                 link.setAttribute("href", "mailto:" + fullEmail);
             });
         });
     </script>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function(e) {
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+            if (!hCaptcha) {
+                e.preventDefault();
+                alert("Please fill out captcha field");
+                return;
+            }
+        });
+    </script>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
